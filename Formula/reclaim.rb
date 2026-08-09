@@ -16,28 +16,28 @@
 class Reclaim < Formula
   desc "Find and safely reclaim disk space taken by developer caches and build artifacts"
   homepage "https://github.com/gokul-kulkarni/reclaim"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/gokul-kulkarni/reclaim/releases/download/v#{version}/reclaim-aarch64-apple-darwin.tar.gz"
-      sha256 "39f5306bb37724ed57faf4a86acfb7218f366b6d1e513932d946af6e95232009"
+      sha256 "1e38a3fb8d9ae1f10b61bb16e8d9236108ac4d0528bcb3e934a37cf3c8602160"
     end
     on_intel do
       url "https://github.com/gokul-kulkarni/reclaim/releases/download/v#{version}/reclaim-x86_64-apple-darwin.tar.gz"
-      sha256 "2cab59ed5f6a6e154f21c44ffb8bb69adb86257ebb25f8538699a110bf37edc8"
+      sha256 "9c0141e2a08c5be70ff1dd72e51a6da0bb6657b9c1faccb804ee55c6facdcffe"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/gokul-kulkarni/reclaim/releases/download/v#{version}/reclaim-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "0edd14864da77d0ac005224d44fb63f29893d2b37174fe07e07976b187ea46fb"
+      sha256 "229b3ed95347621b31221bc024cd53dba2b6994164022a642ffed1a13bf965b3"
     end
     on_intel do
       url "https://github.com/gokul-kulkarni/reclaim/releases/download/v#{version}/reclaim-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "f9a13531beebc1ddae7945597f16f87ccf2f40128ecbdc207b581eaea3d473e9"
+      sha256 "9b41c228dcc1b9654879a54d10560cd528d410312fe4b20591d4d43481b4f4c0"
     end
   end
 
