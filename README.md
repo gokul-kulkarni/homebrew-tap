@@ -1,22 +1,31 @@
 # homebrew-tap
 
-Homebrew tap for [reclaim](https://github.com/gokul-kulkarni/reclaim), a tool
-for finding and safely reclaiming disk space taken by developer caches and
-build artifacts.
+Homebrew tap for Gokul Kulkarni's apps and tools.
+
+| Name | Kind | Install |
+| ---- | ---- | ------- |
+| [Reclaim](https://github.com/gokul-kulkarni/reclaim): finds and safely reclaims disk space taken by developer caches and build artifacts | formula (command-line tool) | `brew install gokul-kulkarni/tap/reclaim` |
+| [Narada](https://github.com/gokul-kulkarni/narada): free, local-first, Postman-compatible API client | cask (macOS app) | `brew install --cask gokul-kulkarni/tap/narada` |
+
+Homebrew asks you to trust a third-party tap once before installing from it:
 
 ```sh
-brew install gokul-kulkarni/tap/reclaim
+brew trust gokul-kulkarni/tap
 ```
+
+After that, the short names work too: `brew install reclaim`, `brew install --cask narada`.
 
 ## About this repo
 
-`Formula/reclaim.rb` is written by the `homebrew` job in
-[reclaim's release workflow](https://github.com/gokul-kulkarni/reclaim/blob/main/.github/workflows/release.yml)
-on every tagged release. It is not meant to be hand-edited here — change the
-source of truth at
-[`packaging/homebrew/reclaim.rb`](https://github.com/gokul-kulkarni/reclaim/blob/main/packaging/homebrew/reclaim.rb)
-in the main repo instead.
+Each package's file is generated from its own repository; change it there, not here.
 
-See [`docs/releasing.md`](https://github.com/gokul-kulkarni/reclaim/blob/main/docs/releasing.md)
-in the main repo for the full release process, including how to test the
-formula locally before it ever reaches this repo.
+- `Formula/reclaim.rb` is written by Reclaim's
+  [`scripts/update-tap.sh`](https://github.com/gokul-kulkarni/reclaim/blob/main/scripts/update-tap.sh)
+  on every release. Its source of truth is
+  [`packaging/homebrew/reclaim.rb`](https://github.com/gokul-kulkarni/reclaim/blob/main/packaging/homebrew/reclaim.rb);
+  see [`docs/releasing.md`](https://github.com/gokul-kulkarni/reclaim/blob/main/docs/releasing.md).
+- `Casks/narada.rb` is updated for each
+  [Narada release](https://github.com/gokul-kulkarni/narada/releases).
+  `brew uninstall --zap --cask narada` also deletes collections kept in Narada's default folder.
+
+To add another package, put a formula in `Formula/` or a cask in `Casks/`, and add a row above.
